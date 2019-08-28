@@ -2,7 +2,3 @@ spring:
   h2:
     console:
       enabled: true
-  mvc:
-    view:
-      prefix: src/main/resources/templates
-      suffix: .hbs
