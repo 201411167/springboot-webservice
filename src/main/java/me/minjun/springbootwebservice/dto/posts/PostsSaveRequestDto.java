@@ -1,4 +1,4 @@
-package me.minjun.springbootwebservice.web;
+package me.minjun.springbootwebservice.dto.posts;
 
 import lombok.Builder;
 import lombok.Getter;

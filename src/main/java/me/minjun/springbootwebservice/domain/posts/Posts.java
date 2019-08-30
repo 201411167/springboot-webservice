@@ -1,6 +1,7 @@
 package me.minjun.springbootwebservice.domain.posts;
 
 import lombok.*;
+import me.minjun.springbootwebservice.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity{
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

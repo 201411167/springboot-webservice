@@ -2,8 +2,8 @@ package me.minjun.springbootwebservice.service;
 
 import lombok.AllArgsConstructor;
 import me.minjun.springbootwebservice.domain.posts.PostsRepository;
-import me.minjun.springbootwebservice.web.PostsMainResponseDto;
-import me.minjun.springbootwebservice.web.PostsSaveRequestDto;
+import me.minjun.springbootwebservice.dto.posts.PostsMainResponseDto;
+import me.minjun.springbootwebservice.dto.posts.PostsSaveRequestDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

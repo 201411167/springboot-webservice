@@ -1,7 +1,7 @@
 package me.minjun.springbootwebservice.web;
 
 import lombok.AllArgsConstructor;
-import me.minjun.springbootwebservice.domain.posts.PostsRepository;
+import me.minjun.springbootwebservice.dto.posts.PostsSaveRequestDto;
 import me.minjun.springbootwebservice.service.PostsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

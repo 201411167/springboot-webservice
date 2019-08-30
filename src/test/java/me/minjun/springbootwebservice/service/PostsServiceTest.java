@@ -2,7 +2,7 @@ package me.minjun.springbootwebservice.service;
 
 import me.minjun.springbootwebservice.domain.posts.Posts;
 import me.minjun.springbootwebservice.domain.posts.PostsRepository;
-import me.minjun.springbootwebservice.web.PostsSaveRequestDto;
+import me.minjun.springbootwebservice.dto.posts.PostsSaveRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
