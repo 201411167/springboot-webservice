@@ -1,15 +1,14 @@
-package me.minjun.springbootwebservice.dto.posts;
+package me.minjun.springbootwebservice.dto;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import me.minjun.springbootwebservice.domain.posts.Posts;
+import me.minjun.springbootwebservice.domain.Posts.Posts;
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class PostsSaveRequestDto {
+public class savePostsDto {
     private String title;
     private String content;
     private String author;
@@ -20,12 +19,5 @@ public class PostsSaveRequestDto {
                 .content(content)
                 .author(author)
                 .build();
-    }
-
-    @Builder
-    public PostsSaveRequestDto(String title, String content, String author) {
-        this.title = title;
-        this.content = content;
-        this.author = author;
     }
 }

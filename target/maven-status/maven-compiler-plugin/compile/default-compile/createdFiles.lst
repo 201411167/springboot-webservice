@@ -1,0 +1,11 @@
+me\minjun\springbootwebservice\dto\posts\PostsMainResponseDto.class
+me\minjun\springbootwebservice\dto\posts\PostsSaveRequestDto$PostsSaveRequestDtoBuilder.class
+me\minjun\springbootwebservice\domain\posts\Posts$PostsBuilder.class
+me\minjun\springbootwebservice\domain\posts\Posts.class
+me\minjun\springbootwebservice\domain\BaseTimeEntity.class
+me\minjun\springbootwebservice\dto\posts\PostsSaveRequestDto.class
+me\minjun\springbootwebservice\service\PostsService.class
+me\minjun\springbootwebservice\domain\posts\PostsRepository.class
+me\minjun\springbootwebservice\web\WebController.class
+me\minjun\springbootwebservice\web\WebRestController.class
+me\minjun\springbootwebservice\SpringbootWebserviceApplication.class

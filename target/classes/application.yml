@@ -1,15 +1,41 @@
+# Spring Boot configuration
 spring:
   profiles:
-    active: local
----
-spring:
-  profiles: local
+    active: development
+  # Database
   datasource:
-    data: classpath:data-h2.sql
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: kim182930
+  # JPA properties
   jpa:
-    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
     hibernate:
-      ddl-auto: create-drop
-  h2:
-    console:
-      enabled: true
+      naming-startegy: org.hibernate.cfg.DefaultNamingStrategy
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: false
+## Logger configuration
+#logging:
+#  pattern:
+#    console: "%d %-5level %logger : %msg%n"
+#  level:
+#    org.springframework: INFO
+#    org.hibernate: DEBUG
+## Server configuration
+#server:
+#  port: 8080
+#  sessionTimeout: 30
+## Security configuration
+#security:
+#  user:
+#    name: user
+#    password: user
