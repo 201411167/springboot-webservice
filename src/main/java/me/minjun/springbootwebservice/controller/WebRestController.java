@@ -2,7 +2,8 @@ package me.minjun.springbootwebservice.controller;
 
 import lombok.AllArgsConstructor;
 import me.minjun.springbootwebservice.domain.Posts.PostsRepository;
-import me.minjun.springbootwebservice.dto.savePostsDto;
+import me.minjun.springbootwebservice.dto.PostsSaveRequestDto;
+import me.minjun.springbootwebservice.service.PostsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import me.minjun.springbootwebservice.domain.Posts.Posts;
 public class WebRestController {
 
     private PostsRepository repo;
+    private PostsService service;
 
     @GetMapping("/insert_test")
     public void insert_test(){
@@ -27,7 +29,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public void posts(@RequestBody savePostsDto dto){
-        repo.save(dto.toEntity());
+    public Long savePosts(@RequestBody PostsSaveRequestDto dto){
+        return service.save(dto);
     }
 }
