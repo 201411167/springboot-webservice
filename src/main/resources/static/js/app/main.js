@@ -25,7 +25,13 @@ var main = {
             alert(error);
         });
     }
-
 };
+
+function showPosts(content){
+    console.log(content);
+    $('#showPostsModal').on('show.bs.modal', function(event){
+        $('.modal-body #contentView').val(content);
+    })
+}
 
 main.init();
