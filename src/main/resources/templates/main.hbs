@@ -29,7 +29,7 @@
         {{#each posts}}
             <tr>
                 <td>{{id}}</td>
-                <td><a href="#" data-toggle="modal" data-target="#showPostsModal" onclick="showPosts('{{content}}');">{{title}}</td>
+                <td><a href="#" data-toggle="modal" data-target="#showPostsModal" onclick="showModal.showPosts('{{content}}'); updateModal.getId({{id}});">{{title}}</td>
                 <td>{{author}}</td>
                 <td>{{modifiedDate}}</td>
             </tr>
@@ -38,6 +38,7 @@
     </table>
 </div>
 
+<!-- 글을 보여주는 Modal -->
 <div class="modal fade" id="showPostsModal" tabindex="-1" role="dialog" aria-labelledby="showPostsLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -51,12 +52,35 @@
                 <input type="text" id="contentView" name="contentView" style="border:none">
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updatePostsModal">수정</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- 글을 수정하는 Modal -->
+<div class="modal fade" id="updatePostsModal" tabindex="-1" role="dialog" aria-labelledby="updatePostsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updatePostsLabel">게시글 수정</h5>
+                <button type="buttone" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea typeof="text" id="textAreaUpdate" name="textAreaUpdate" style="width=100%;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" onclick="updateModal.updateContent($('#textAreaUpdate').val());">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 글을 등록하는 Modal -->
 <div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -96,5 +120,7 @@
 
 <!--커스텀 js 추가-->
 <script src="/js/app/main.js"></script>
+<script src="/js/app/showModal.js"></script>
+<script src="/js/app/updateModal.js"></script>
 </body>
 </html>

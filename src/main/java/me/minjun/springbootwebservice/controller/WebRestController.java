@@ -3,6 +3,7 @@ package me.minjun.springbootwebservice.controller;
 import lombok.AllArgsConstructor;
 import me.minjun.springbootwebservice.domain.Posts.PostsRepository;
 import me.minjun.springbootwebservice.dto.PostsSaveRequestDto;
+import me.minjun.springbootwebservice.dto.PostsUpdateDto;
 import me.minjun.springbootwebservice.service.PostsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,12 +25,17 @@ public class WebRestController {
     }
 
     @GetMapping("/delete_test")
-    public void delete_test(){
-        repo.deleteAll();
-    }
+    public void delete_test() { repo.deleteAll(); }
 
     @PostMapping("/posts")
     public Long savePosts(@RequestBody PostsSaveRequestDto dto){
         return service.save(dto);
+    }
+
+    @PostMapping("/updatePosts")
+    public Long updatePosts(@RequestBody PostsUpdateDto dto){
+        System.out.println(dto.getContent());
+        System.out.println(dto.getId());
+        return service.update(dto);
     }
 }

@@ -6,10 +6,10 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     #default url: jdbc:postgresql://localhost:5432/postgres
-    url: jdbc:postgresql://localhost:5432/${database-name}
+    url: jdbc:postgresql://localhost:5432/postgres
     #default username: postgres
-    username: ${username}
-    password: ${password}
+    username: postgres
+    password: kim182930
   # JPA properties
   jpa:
     properties:

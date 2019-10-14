@@ -1,5 +1,6 @@
 var main = {
     init : function () {
+        console.log('main.js');
         var _this = this;
         $('#btn-save').on('click', function () {
             _this.save();
@@ -26,12 +27,5 @@ var main = {
         });
     }
 };
-
-function showPosts(content){
-    console.log(content);
-    $('#showPostsModal').on('show.bs.modal', function(event){
-        $('.modal-body #contentView').val(content);
-    })
-}
 
 main.init();

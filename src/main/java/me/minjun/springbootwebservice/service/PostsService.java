@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import me.minjun.springbootwebservice.domain.Posts.PostsRepository;
 import me.minjun.springbootwebservice.dto.PostsMainResponseDto;
 import me.minjun.springbootwebservice.dto.PostsSaveRequestDto;
+import me.minjun.springbootwebservice.dto.PostsUpdateDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,5 +27,10 @@ public class PostsService {
         return postsRepository.findAllDesc()
                 .map(PostsMainResponseDto::new)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public Long update(PostsUpdateDto dto){
+        return Long.valueOf(postsRepository.update(dto.getContent(),dto.getId()));
     }
 }
